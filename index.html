@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cave Proposal Generator</title>
+  <!-- Google Fonts (Lato) -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1 id="companyName">Cave Fire Protection, LLC</h1>
+    <p id="companyInfo">cavefireprotection.com | (XXX) XXX-XXXX | info@cavefireprotection.com</p>
+  </header>
+  <main class="container">
+    <aside class="sidebar">
+      <section class="section">
+        <h2>File</h2>
+        <button id="exportBtn">Export JSON</button>
+        <label class="file-label">Load JSON
+          <input type="file" id="importFile" accept="application/json" />
+        </label>
+        <button id="printBtn">Download PDF</button>
+      </section>
+
+      <!-- Appearance customization -->
+      <section class="section">
+        <h2>Appearance</h2>
+        <label>Accent Color</label>
+        <!-- default value matches CSS variable -->
+        <input type="color" id="accentColorInput" value="#2c3e50" />
+        <label>Font</label>
+        <select id="fontSelect">
+          <option value="Lato">Lato</option>
+          <option value="Roboto">Roboto</option>
+          <option value="Montserrat">Montserrat</option>
+          <option value="Open Sans">Open Sans</option>
+          <option value="Merriweather">Merriweather</option>
+        </select>
+      </section>
+      <section class="section">
+        <h2>Totals</h2>
+        <label>Subtotal</label>
+        <input type="number" id="subtotalInput" />
+        <label>Contingency (%)</label>
+        <input type="number" id="contingencyInput" />
+        <p class="note">Auto total with contingency: <span id="contingencyTotal"></span></p>
+        <label>Contract Total (active)</label>
+        <input type="number" id="totalInput" />
+      </section>
+      <section class="section">
+        <h2>Payment Options</h2>
+        <select id="scheduleSelect"></select>
+        <p class="note">Selecting a schedule recomputes the phase amounts against the active total.</p>
+      </section>
+      <section class="section">
+        <h2>Payment Terms</h2>
+        <textarea id="termsInput" rows="6"></textarea>
+        <h2>Retainage</h2>
+        <textarea id="retainageInput" rows="5"></textarea>
+      </section>
+      <section class="section">
+        <h2>Unit Rates</h2>
+        <textarea id="unitRatesInput" rows="4"></textarea>
+        <h2>Allowances</h2>
+        <textarea id="allowancesInput" rows="3"></textarea>
+      </section>
+
+      <!-- Tasks / Cost breakdown -->
+      <section class="section">
+        <h2>Tasks (Cost Breakdown)</h2>
+        <table id="tasksTable"></table>
+        <button id="addTaskBtn" type="button">Add Task</button>
+      </section>
+    </aside>
+    <section class="content">
+      <section class="section" id="metaSection">
+        <!-- Meta details will be injected here -->
+      </section>
+      <section class="section">
+        <h2>Executive Summary</h2>
+        <p id="execSummary"></p>
+      </section>
+      <section class="section">
+        <h2>Totals Summary</h2>
+        <table id="totalsTable"></table>
+      </section>
+      <section class="section">
+        <h2>Phases</h2>
+        <table id="phasesTable"></table>
+      </section>
+      <section class="section">
+        <h2>Payment Terms & Retainage</h2>
+        <p id="termsDisplay"></p>
+        <p id="retainageDisplay"></p>
+      </section>
+      <section class="section" id="unitRatesSection"></section>
+      <section class="section" id="allowancesSection"></section>
+      <section class="section" id="alternatesSection"></section>
+      <section class="section" id="checklistSection"></section>
+      <section class="section" id="scopeSection"></section>
+      <section class="section" id="inclusionsSection"></section>
+      <section class="section" id="exclusionsSection"></section>
+      <section class="section" id="clarificationsSection"></section>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
